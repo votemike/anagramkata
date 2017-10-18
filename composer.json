@@ -1,0 +1,26 @@
+{
+    "name": "votemike/anagramkata",
+    "description": "Test your PHPfoo",
+    "authors": [
+        {
+            "name": "Michael Gwynne",
+            "email": "michael.gwynne@bbc.co.uk"
+        }
+    ],
+    "require": {},
+    "require-dev": {
+        "phpunit/phpunit": "^6.4",
+        "phpbench/phpbench": "^0.13.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Votemike\\Anagram\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Votemike\\Anagram\\Test\\": "tests"
+        }
+    },
+    "sort-packages": true
+}
