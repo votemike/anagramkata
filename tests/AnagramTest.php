@@ -12,6 +12,6 @@ class AnagramTest extends TestCase
     public function testIsAnagram()
     {
         // @TODO DELETE THIS ASSERTION
-        $this->assertFalse(Anagram::isAnagram('a', 'b'));
+        $this->assertTrue(Anagram::isAnagram('doctorwho', 'torchwood'));
     }
 }
