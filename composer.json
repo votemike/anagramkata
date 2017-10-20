@@ -22,5 +22,9 @@
             "Votemike\\Anagram\\Test\\": "tests"
         }
     },
+    "scripts": {
+        "bench": "vendor/bin/phpbench run benchmarks",
+        "test": "vendor/bin/phpunit"
+    },
     "sort-packages": true
 }
