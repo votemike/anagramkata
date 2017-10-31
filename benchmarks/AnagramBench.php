@@ -10,7 +10,10 @@ class AnagramBench
      */
     public function benchShortAnagram()
     {
-        Anagram::isAnagram('a', 'a');
+        Anagram::isAnagram(
+            'a',
+            'a'
+        );
     }
 
     /**
@@ -19,7 +22,22 @@ class AnagramBench
      */
     public function benchShortNonAnagram()
     {
-        Anagram::isAnagram('a', 'b');
+        Anagram::isAnagram(
+            'a',
+            'b'
+        );
+    }
+
+    /**
+     * @Iterations(5)
+     * @Revs(500)
+     */
+    public function benchLongSame()
+    {
+        Anagram::isAnagram(
+            'qazwsxedcrfvtgbyhnujmikolpqazwsxedcrfvtgbyhnujmikolpqazwsxedcrfvtgbyhnujmikolp',
+            'qazwsxedcrfvtgbyhnujmikolpqazwsxedcrfvtgbyhnujmikolpqazwsxedcrfvtgbyhnujmikolp'
+        );
     }
 
     /**
@@ -28,7 +46,10 @@ class AnagramBench
      */
     public function benchLongAnagram()
     {
-        Anagram::isAnagram('qazwsxedcrfvtgbyhnujmikolp', 'azwsxedcrfvtgbyhnujmikolpq');
+        Anagram::isAnagram(
+            'pazwsxedcrfvtgbyhnujmikolpqazwsxedcrfvtgbyhnujmikolpqazwsxedcrfvtgbyhnujmikolp',
+            'qazwsxedcrfvtgbyhnujmikolpqazwsxedcrfvtgbyhnujmikolpqazwsxedcrfvtgbyhnujmikolq'
+        );
     }
 
     /**
@@ -37,6 +58,33 @@ class AnagramBench
      */
     public function benchLongNonAnagram()
     {
-        Anagram::isAnagram('qazwsxedcrfvtgbyhnujmikolp', 'azwsxedcrfvtgbyhnujmikolpa');
+        Anagram::isAnagram(
+            'qazwsxedcrfvtgbyhnujmikolpqazwsxedcrfvtgbyhnujmikolpqazwsxedcrfvtgbyhnujmikolp',
+            'qazwsxedcrfvtgbyhnujmikolpqazwsxedcrfvtgbyhnujmikolpqazwsxedcrfvtgbyhnujmikolq'
+        );
+    }
+
+    /**
+     * @Iterations(5)
+     * @Revs(500)
+     */
+    public function benchLongNonAnagramOfDifferingLengths()
+    {
+        Anagram::isAnagram(
+            'qazwsxedcrfvtgbyhnujmikolpqazwsxedcrfvtgbyhnujmikolpqazwsxedcrfvtgbyhnujmikolpqazwsxedcrfvtgbyhnujmikolpqazwsxedcrfvtgbyhnujmikolpqazwsxedcrfvtgbyhnujmikolpqazwsxedcrfvtgbyhnujmikolpqazwsxedcrfvtgbyhnujmikolpqazwsxedcrfvtgbyhnujmikolpqazwsxedcrfvtgbyhnujmikolpqazwsxedcrfvtgbyhnujmikolpqazwsxedcrfvtgbyhnujmikolpqazwsxedcrfvtgbyhnujmikolpqazwsxedcrfvtgbyhnujmikolpqazwsxedcrfvtgbyhnujmikolp',
+            'qazwsxedcrfvtgbyhnujmikolpqazwsxedcrfvtgbyhnujmikolpqazwsxedcrfvtgbyhnujmikolpqazwsxedcrfvtgbyhnujmikolpqazwsxedcrfvtgbyhnujmikolpqazwsxedcrfvtgbyhnujmikolpqazwsxedcrfvtgbyhnujmikolpqazwsxedcrfvtgbyhnujmikolpqazwsxedcrfvtgbyhnujmikolpqazwsxedcrfvtgbyhnujmikolpqazwsxedcrfvtgbyhnujmikolpqazwsxedcrfvtgbyhnujmikolpqazwsxedcrfvtgbyhnujmikolpqazwsxedcrfvtgbyhnujmikolp'
+        );
+    }
+
+    /**
+     * @Iterations(5)
+     * @Revs(500)
+     */
+    public function benchLongNonAnagramWhereFirstLetterDoesntExist()
+    {
+        Anagram::isAnagram(
+            'qwertyuiopqwertyuiopqwertyuiopqwertyuiopqwertyuiopqwertyuiopqwertyuiopqwertyuiopqwertyuiopqwertyuiopqwertyuiopqwertyuiopqwertyuiopqwertyuiopqwertyuiopqwertyuiopqwertyuiopqwertyuiopqwertyuiop',
+            'zwertyuiopqwertyuiopqwertyuiopqwertyuiopqwertyuiopqwertyuiopqwertyuiopqwertyuiopqwertyuiopqwertyuiopqwertyuiopqwertyuiopqwertyuiopqwertyuiopqwertyuiopqwertyuiopqwertyuiopqwertyuiopqwertyuiop'
+        );
     }
 }
