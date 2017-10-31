@@ -32,11 +32,23 @@ class AnagramBench
      * @Iterations(5)
      * @Revs(500)
      */
-    public function benchLongAnagram()
+    public function benchLongSame()
     {
         Anagram::isAnagram(
             'qazwsxedcrfvtgbyhnujmikolpqazwsxedcrfvtgbyhnujmikolpqazwsxedcrfvtgbyhnujmikolp',
             'qazwsxedcrfvtgbyhnujmikolpqazwsxedcrfvtgbyhnujmikolpqazwsxedcrfvtgbyhnujmikolp'
+        );
+    }
+
+    /**
+     * @Iterations(5)
+     * @Revs(500)
+     */
+    public function benchLongAnagram()
+    {
+        Anagram::isAnagram(
+            'pazwsxedcrfvtgbyhnujmikolpqazwsxedcrfvtgbyhnujmikolpqazwsxedcrfvtgbyhnujmikolp',
+            'qazwsxedcrfvtgbyhnujmikolpqazwsxedcrfvtgbyhnujmikolpqazwsxedcrfvtgbyhnujmikolq'
         );
     }
 

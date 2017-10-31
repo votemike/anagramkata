@@ -4,6 +4,10 @@ class Anagram
 {
     public static function isAnagram(string $word1, string $word2): bool
     {
+        if ($word1 === $word2) {
+            return true;
+        }
+
         if (strlen($word1) !== strlen($word2)) {
             return false;
         }
