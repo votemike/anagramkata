@@ -19,6 +19,10 @@ class AnagramTest extends TestCase
     public function testIsNotAnagram()
     {
         $this->assertFalse(Anagram::isAnagram('a', 'b'));
+    }
+
+    public function testDuplicateCharacters()
+    {
         $this->assertFalse(Anagram::isAnagram('a', 'aa'));
         $this->assertFalse(Anagram::isAnagram('abb', 'aab'));
     }
