@@ -21,5 +21,7 @@ class AnagramTest extends TestCase
         $this->assertFalse(Anagram::isAnagram('a', 'b'));
         $this->assertFalse(Anagram::isAnagram('a', 'aa'));
         $this->assertFalse(Anagram::isAnagram('abb', 'aab'));
+        $this->assertFalse(Anagram::isAnagram('', 'b'));
+        $this->assertFalse(Anagram::isAnagram('a', ''));
     }
 }

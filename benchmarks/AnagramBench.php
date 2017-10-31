@@ -87,4 +87,13 @@ class AnagramBench
             'zwertyuiopqwertyuiopqwertyuiopqwertyuiopqwertyuiopqwertyuiopqwertyuiopqwertyuiopqwertyuiopqwertyuiopqwertyuiopqwertyuiopqwertyuiopqwertyuiopqwertyuiopqwertyuiopqwertyuiopqwertyuiopqwertyuiop'
         );
     }
+
+    /**
+     * @Iterations(5)
+     * @Revs(500)
+     */
+    public function benchLongAnagramWithRepeatedLetters()
+    {
+        Anagram::isAnagram('aaaaaaaaaaaaaaaaaaaaaaab', 'baaaaaaaaaaaaaaaaaaaaaaa');
+    }
 }
